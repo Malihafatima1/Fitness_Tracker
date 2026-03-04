@@ -7,7 +7,7 @@ import {
   MailIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Await, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { Toaster } from "react-hot-toast";
 

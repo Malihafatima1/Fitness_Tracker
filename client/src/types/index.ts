@@ -1,5 +1,7 @@
 // User
 export type User = {
+    dailyCaloriesBurn: number;
+    dailyCaloriesIntake: string;
     id: string;
     email: string;
     username: string;

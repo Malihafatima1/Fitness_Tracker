@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { useTheme } from "../context/ThemeContext";
-import { Calendar, LogOutIcon, MoonIcon, Scale, SunIcon, Target, User, Weight } from "lucide-react";
+import { Calendar, LogOutIcon, MoonIcon, Scale, SunIcon, Target, User } from "lucide-react";
 import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
 import Button from "../components/ui/Button";
@@ -19,11 +19,11 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [fromData, setFormData] = useState<ProfileFormData>({
     age: 0,
-    Weight: 0,
+    weight: 0,
     height: 0,
     goal: "maintain",
-    dailyCalorieIntake: 2000,
-    dailyCalorieBurn: 400,
+    dailyCaloriesIntake: 2000,
+    dailyCaloriesBurn: 400,
   });
 
   const fetchcUserData = () => {
@@ -33,15 +33,15 @@ const Profile = () => {
         weight: user?.weight || 0,
         height: user?.height || 0,
         goal: user?.goal || "maintain",
-        dailyCalorieIntake: user?.dailyCalorieIntake || 2000,
-        dailyCalorieBurn: user?.dailyCalorieBurn || 400,
+        dailyCaloriesIntake: user?.dailyCaloriesIntake || 2000,
+        dailyCaloriesBurn: user?.dailyCaloriesBurn || 400,
       });
     }
-
-    useEffect(() => {
-      fetchcUserData();
-    }, [user]);
   };
+  
+  useEffect(() => {
+    fetchcUserData();
+  }, [user]);
 
   const handleSave = async () => {
     try {
@@ -132,7 +132,7 @@ const Profile = () => {
 
               <Select
                 label="Fitness Gaol"
-                value={fromData.goal as String}
+                value={fromData.goal as string}
                 onChange={(v) =>
                   setFormData({
                     ...fromData,
@@ -152,9 +152,9 @@ const Profile = () => {
                       age: Number(user.age),
                       weight: Number(user.weight),
                       height: Number(user.height),
-                      gaol: user.goal || "",
-                      dailyCalorieIntake: user.dailyCalorieIntake || "2000",
-                      dailyCalorieBurn: user.dailyCalorieBurn || "400",
+                      goal: user.goal || "",
+                      dailyCaloriesIntake: user.dailyCaloriesIntake || 2000,
+                      dailyCaloriesBurn: user.dailyCaloriesBurn || 400,
                     });
                   }}
                 >
