@@ -1,7 +1,5 @@
 // User
 export type User = {
-    dailyCaloriesBurn: number;
-    dailyCaloriesIntake: string;
     id: string;
     email: string;
     username: string;
@@ -11,8 +9,8 @@ export type User = {
     weight?: number;
     height?: number;
     goal?: "lose" | "maintain" | "gain";
-    dailyCalorieIntake?: number;
-    dailyCalorieBurn?: number;
+    dailyCaloriesIntake?: number;
+    dailyCaloriesBurn?: number;
     createdAt?: string;
 } | null;
 
@@ -41,12 +39,12 @@ export interface ProfileFormData {
     weight: number;
     height: number;
     goal: string;
-    dailyCalorieIntake: number;
-    dailyCalorieBurn: number;
+    dailyCaloriesIntake: number;
+    dailyCaloriesBurn: number;
 }
 
 // Food
-export interface FormData {
+export interface FoodFormData {
     name: string;
     calories: number;
     mealType: string;

@@ -1,6 +1,5 @@
 import {
   AtSignIcon,
-  AwardIcon,
   EyeIcon,
   EyeOffIcon,
   LockIcon,

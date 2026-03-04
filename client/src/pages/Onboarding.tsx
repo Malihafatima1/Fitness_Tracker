@@ -221,8 +221,8 @@ const Onboarding = () => {
                         (r) => age <= r.max || ageRanges[ageRanges.length - 1]
                       );
 
-                      let intake = range.maintain;
-                      let burn = range.burn;
+                      let intake = range?.maintain;
+                      let burn = range?.burn;
 
                       if (option.value === "lose") {
                         intake -= 400;
@@ -265,7 +265,7 @@ const Onboarding = () => {
                     max={4000}
                     step={50}
                     value={formData.dailyCaloriesIntake}
-                    onChange={(v) => updateField("dailyCalorieIntake", v)}
+                    onChange={(v) => updateField("dailyCaloriesIntake", v)}
                     unit="kcal"
                     infoText="THe total calories you plan to consume each day."
                   />
@@ -275,7 +275,7 @@ const Onboarding = () => {
                     max={2000}
                     step={50}
                     value={formData.dailyCaloriesBurn}
-                    onChange={(v) => updateField("dailyCalorieBurn", v)}
+                    onChange={(v) => updateField("dailyCaloriesBurn", v)}
                     unit="kcal"
                     infoText="THe total calories you aim to burnn through exercise and activity each day."
                   />

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useAppContext } from "../context/AppContext";
-import type { FoodEntry } from "../types";
+import type { FoodEntry, FoodFormData } from "../types";
 import Card from "../components/ui/Card";
 import {
   mealColors,
@@ -10,7 +10,6 @@ import {
 } from "../assets/assets";
 import Button from "../components/ui/Button";
 import {
-  Loader2,
   Loader2Icon,
   PlusIcon,
   SparkleIcon,
@@ -26,7 +25,7 @@ const FoodLog = () => {
 
   const [entries, setEntries] = useState<FoodEntry[]>([]);
   const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FoodFormData>({
     name: "",
     calories: 0,
     mealType: "",
