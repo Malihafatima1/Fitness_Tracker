@@ -4,13 +4,12 @@ import {
   PersonStanding,
   ScaleIcon,
   Target,
-  User,
-  Vault,
+  User
 } from "lucide-react";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useAppContext } from "../context/AppContext";
-import type { ProfileFormData, UserData } from "../types";
+import type { ProfileFormData } from "../types";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import { ageRanges, goalOptions } from "../assets/assets";
