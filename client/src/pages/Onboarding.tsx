@@ -217,20 +217,22 @@ const Onboarding = () => {
                     key={option.value}
                     onClick={() => {
                       const age = Number(formData.age);
-                      const range = ageRanges.find(
-                        (r) => age <= r.max || ageRanges[ageRanges.length - 1]
-                      );
 
-                      let intake = range?.maintain;
-                      let burn = range?.burn;
-
+                      const range =
+                        ageRanges.find((r) => age <= r.max) ??
+                        ageRanges[ageRanges.length - 1];
+                      
+                      let intake = range.maintain;
+                      let burn = range.burn;
+                      
                       if (option.value === "lose") {
-                        intake -= 400;
-                        burn += 100;
+                        intake = intake - 400;
+                        burn = burn + 100;
                       } else if (option.value === "gain") {
-                        intake += 400;
-                        burn -= 100;
+                        intake = intake + 400;
+                        burn = burn - 100;
                       }
+                      
                       setFormData({
                         ...formData,
                         goal: option.value as "lose" | "maintain" | "gain",

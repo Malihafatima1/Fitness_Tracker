@@ -8,7 +8,6 @@ import {
   HamburgerIcon,
   Ruler,
   ScaleIcon,
-  SunMedium,
   TrendingUpIcon,
   ZapIcon,
 } from "lucide-react";
@@ -21,7 +20,7 @@ const Dashboard = () => {
   const [todayFood, setTodyFood] = useState<FoodEntry[]>([]);
   const [todayActivities, setTodayActivities] = useState<ActivityEntry[]>([]);
 
-  const DAILY_CALORY_LIMIT: number = user?.dailyCalorieIntake || 2000;
+  const DAILY_CALORY_LIMIT: number = user?.dailyCaloriesIntake || 2000;
 
   //load user data
   const loadUserData = () => {
@@ -153,13 +152,13 @@ const Dashboard = () => {
             <div className="text-right">
               <p className="text-sm text-slate-500 dark:text-slate-400">Goal</p>
               <p className="text-2xl font-bold text-slate-800 dark:text-white">
-                {user?.dailyCalorieBurn || 400}
+                {user?.dailyCaloriesBurn || 400}
               </p>
             </div>
           </div>
           <ProgressBar
             value={totalBurned}
-            max={user?.dailyCalorieBurn || 400}
+            max={user?.dailyCaloriesBurn || 400}
           />
         </Card>
 

@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext";
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
-import { ActivityIcon, DumbbellIcon, PlusIcon, TimerIcon, TimerOff, Trash2Icon } from "lucide-react";
+import { ActivityIcon, DumbbellIcon, PlusIcon, TimerIcon, Trash2Icon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
